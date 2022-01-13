@@ -1,0 +1,351 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: #35276d;
+  --primary-color: #bbf1f1;
+  --secondary-color: #2ce6e6;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+a {
+  text-decoration: none;
+}
+img {
+  width: 100%;
+}
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.btn {
+  margin-top: 1rem;
+  font-size: 1.7rem;
+  color: var(--text-color);
+  width: 14rem;
+  text-transform: capitalize;
+  background: var(--secondary-color);
+  border-radius: 5rem;
+  padding: 0.8rem 0;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+section {
+  margin: 2rem 0;
+}
+/* header section css */
+header {
+  padding: 1.5rem 0rem;
+  background-color: var(--secondary-color);
+}
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .logo a {
+  color: var(--text-color);
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 0.3rem;
+}
+header .logo a span {
+  color: #ff793f;
+}
+
+.form {
+  width: 30rem;
+}
+.form .search {
+  font-size: 1.7rem;
+  color: var(--text-color);
+  width: 100%;
+  background-color: var(--primary-color);
+  border: 0.05rem solid var(--primary-color);
+  padding: 1rem 2rem;
+  border-radius: 5rem;
+}
+.form .search:focus {
+  outline: 0;
+  background: var(--primary-color);
+}
+.form .search::placeholder {
+  color: var(--text-color);
+}
+
+/* header section css end */
+/* header section css end */
+.filter {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  flex-flow: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.filter__element {
+  display: inline-block;
+  font-size: 1.5rem;
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  background-color: #ff793f;
+  border-radius: 5rem;
+  cursor: pointer;
+}
+.filter__element.highlight {
+  color: var(--text-color);
+  background-color: var(--secondary-color);
+}
+/* movie section css */
+.movie__area {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.movie {
+  flex: 1 1 30rem;
+  border-radius: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--secondary-color);
+  box-shadow: 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.2);
+}
+.movie img {
+  width: 100%;
+  transform: scale(1);
+  transition: all 0.3s;
+}
+.movie:hover img {
+  transform: scale(1.09);
+}
+.movie__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.movie__title {
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.movie__info span {
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 0.6rem;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.movie__info span.green {
+  color: lightgreen;
+}
+.movie__info span.orange {
+  color: orange;
+}
+.movie__info span.red {
+  color: red;
+}
+.year {
+  font-size: 2rem;
+  background-color: var(--secondary-color);
+  padding: 0.2rem 4rem;
+  position: absolute;
+  top: 11px;
+  left: -35px;
+  transform: rotate(310deg);
+}
+
+.overview {
+  font-size: 1.5rem;
+  padding: 1rem;
+  background: #fff;
+  color: var(--text-color);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-height: 100%;
+  transform: translateY(101%);
+  transition: 0.3s;
+}
+.overview h4 {
+  margin-bottom: 0.8rem;
+}
+.movie:hover .overview {
+  transform: translateY(0);
+}
+
+.movie__area .error {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.movie__area .error .error__content {
+  width: 65rem;
+  height: 50rem;
+}
+.movie__area .error .error__content img {
+  width: 100%;
+  height: 100%;
+}
+
+.pagination {
+  margin: 2rem 0rem;
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.pagination__page {
+  font-size: 1.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 0.8rem 1.6rem;
+  border-radius: 0.5rem;
+  background-color: #ff793f;
+  cursor: pointer;
+}
+.pagination__page.pagination__page--disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+/* movie section css end */
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 10%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  left: 45px;
+  font-size: 60px;
+}
+
+.embed.hide {
+  display: none;
+}
+.embed.show {
+  display: inline-block;
+}
+
+/* Media css start here */
+
+/* `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .container {
+    max-width: 100%;
+    padding: 0rem 2rem;
+  }
+  header .container {
+    flex-direction: column;
+  }
+  .form {
+    width: 100%;
+  }
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 10px;
+    left: 15px;
+  }
+  .overlay-content {
+    top: 20%;
+  }
+  iframe {
+    width: 90%;
+    height: 180px;
+  }
+}
+
+/*  `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .container {
+    max-width: 100%;
+    padding: 0rem 2rem;
+  }
+  iframe {
+    width: 90%;
+  }
+}
+
+/* `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+  .container {
+    max-width: 72rem;
+    padding: 0rem 2rem;
+  }
+  iframe {
+    width: 90%;
+  }
+}
+
+/* `xl` applies to large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+  .container {
+    max-width: 96rem;
+    padding: 0rem 2rem;
+  }
+}
+
+/* `xxl` applies to x-large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {
+  .container {
+    max-width: 114rem;
+  }
+}
+
+/* Media css end here */
